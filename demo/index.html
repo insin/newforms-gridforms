@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Product Form | newforms-gridform</title>
+  <script src="http://fb.me/react-with-addons-0.12.1.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+  <script src="../../newforms/build/newforms.js"></script>
+  <script src="../dist/newforms-gridforms.js"></script>
+  <link rel="stylesheet" href="gridforms.css">
+</head>
+<body>
+<script type="text/jsx;harmony=true">void function() {
+'use strict'
+
+var {GridForm, Section, Row, Field} = NewformsGridForms
+
+var VENDOR_CHOICES = [
+  ['', 'Select a vendor']
+, 'ted'
+, 'Magna Phasellus Dolor Incorporated'
+, 'Fames Ac Turpis Inc.'
+, 'Eu Eros Institute'
+, 'Suspendisse Sagittis Associates'
+, 'Tempor Lorem PC'
+, 'Nulla Facilisi Sed PC'
+, 'Dignissim Corp.'
+, 'Blandit Ltd'
+, 'Dapibus Gravida Aliquam LLP'
+, 'Cursus A Inc.'
+, 'Tellus PC'
+, 'Fusce Mi Foundation'
+, 'Dictum Sapien Aenean Associates'
+, 'In Tincidunt PC'
+, 'Sapien Aenean Ltd'
+, 'Libero Foundation'
+, 'Egestas Rhoncus Proin Corp.'
+, 'Feugiat Nec Diam Institute'
+, 'Turpis Foundation'
+, 'Pede Malesuada Vel Associates'
+, 'Eget Venenatis A PC'
+, 'Mollis Vitae Corporation'
+, 'Gravida Mauris Incorporated'
+, 'Tortor Consulting'
+, 'Habitant Morbi Tristique Corporation'
+, 'Enim Corp.'
+, 'Sed Turpis Nec LLC'
+, 'Enim Foundation'
+, 'Tincidunt Orci Quis Institute'
+, 'Lectus Pede LLC'
+, 'Class Corporation'
+, 'Erat Volutpat Nulla LLP'
+, 'Sed LLC'
+, 'Justo Faucibus Associates'
+, 'Vel Turpis Foundation'
+, 'Tellus Aenean Limited'
+, 'Tempus Scelerisque Corporation'
+, 'Eleifend LLP'
+, 'A Felis Ullamcorper Company'
+, 'Neque Non LLC'
+, 'Nibh Donec Est PC'
+]
+
+var PRODUCT_TYPE_CHOICES = [
+  ['', 'Select a product type']
+, 'et magnis'
+, 'Vivamus rhoncus.'
+, 'egestas ligula.'
+, 'nulla. Cras'
+, 'Proin mi.'
+, 'turpis non'
+, 'ante ipsum'
+, 'arcu. Curabitur'
+, 'ante. Maecenas'
+, 'magna. Phasellus'
+, 'Suspendisse aliquet,'
+, 'purus gravida'
+, 'ac risus.'
+, 'mollis non,'
+]
+
+var ProductForm = forms.Form.extend({
+  productName: forms.CharField(),
+  tags: forms.CharField(),
+  vendor: forms.ChoiceField({choices: VENDOR_CHOICES}),
+  productType: forms.ChoiceField({choices: PRODUCT_TYPE_CHOICES}),
+  productDescription: forms.CharField({widget: forms.Textarea}),
+  sku: forms.CharField(),
+  initialStockLevel: forms.IntegerField({min: 0}),
+  costPrice: forms.DecimalField({min: 0, decimalPlaces: 2}),
+  wholesalePrice: forms.DecimalField({min: 0, decimalPlaces: 2}),
+  retailPrice: forms.DecimalField({min: 0, decimalPlaces: 2})
+})
+
+var App = React.createClass({
+  render() {
+    return <form>
+      <forms.RenderForm form={ProductForm}>
+        <GridForm>
+          <Section name="Add to inventory">
+            <Row>
+              <Field name="productName" span="3"/>
+              <Field name="tags"/>
+            </Row>
+            <Row>
+              <Field name="vendor"/>
+              <Field name="productType"/>
+            </Row>
+            <Row>
+              <Field name="productDescription"/>
+            </Row>
+            <Row>
+              <Field name="sku"/>
+              <Field name="initialStockLevel"/>
+              <Field name="costPrice"/>
+              <Field name="wholesalePrice"/>
+              <Field name="retailPrice"/>
+            </Row>
+          </Section>
+        </GridForm>
+      </forms.RenderForm>
+    </form>
+  }
+})
+
+React.render(<App/>, document.body)
+}()</script>
+</body>
