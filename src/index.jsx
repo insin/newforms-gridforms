@@ -25,7 +25,6 @@ var Section = React.createClass({
 
 var Row = React.createClass({
   render() {
-    console.log(this.props.children)
     var span = 0
     React.Children.forEach(this.props.children, c => span += Number(c.props.span))
     return <div data-row-span={span}>
