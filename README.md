@@ -41,13 +41,13 @@ var {GridForm, Section, Row, Field} = NewformsGridForms
 Nest `<Section>`, `<Row>` and `<Field>` components under a `<GridForm>` as
 necessary.
 
-Row spans will be calculated based on fields, so you only have to
-specify spans for field which need more than the default of 1.
+Row spans will be calculated based on their Fields, so you only have to
+specify `span` props for fields which need more than the default of `1`.
 
 Currently, `GridForm` expects a form instance as a `form` prop.
 
-`forms.RenderForm` will pass its form instance to a nested `GridForm`, which
-will pass it all the way down to the `Field`s - React's context feature will
+`forms.RenderForm` will pass its form instance to a nested `GridForm`, as will
+each component all the way down to `Field` - React's context feature will
 obviate the need for the `form` prop and this manual passing process once
  [facebook/react#2112](https://github.com/facebook/react/issues/2112) lands.
 
