@@ -5,7 +5,8 @@
 
 ## Demos
 
-TBD
+* [Product Form](http://insin.github.io/newforms-gridforms/) - the from from the
+  Grid Forms homepage rendered with newforms-gridforms.
 
 ## Install
 
@@ -29,7 +30,57 @@ You can find it in the [/dist directory](https://github.com/insin/newforms-gridf
 
 ## Usage
 
-TBD
+```javascript
+// Node only - a global NewformsGridForms variable is exported in the browser
+var NewformsGridForms = require('newforms-gridforms')
+
+// Components are exported as properties of NewformsGridForms
+var {GridForm, Section, Row, Field} = NewformsGridForms
+```
+
+Nest `<Section>`, `<Row>` and `<Field>` components under a `<GridForm>` as
+necessary.
+
+Row spans will be calculated based on fields, so you only have to
+specify spans for field which need more than the default of 1.
+
+Currently, `GridForm` expects a form instance as a `form` prop.
+
+`forms.RenderForm` will pass its form instance to a nested `GridForm`, which
+will pass it all the way down to the `Field`s - React's context feature will
+obviate the need for the `form` prop and this manual passing process once
+ [facebook/react#2112](https://github.com/facebook/react/issues/2112) lands.
+
+Product Form example:
+
+```html
+<form>
+  <forms.RenderForm form={ProductForm}>
+    <GridForm>
+      <Section name="Add to inventory">
+        <Row>
+          <Field name="productName" span="3"/>
+          <Field name="tags"/>
+        </Row>
+        <Row>
+          <Field name="vendor"/>
+          <Field name="productType"/>
+        </Row>
+        <Row>
+          <Field name="productDescription"/>
+        </Row>
+        <Row>
+          <Field name="sku"/>
+          <Field name="initialStockLevel"/>
+          <Field name="costPrice"/>
+          <Field name="wholesalePrice"/>
+          <Field name="retailPrice"/>
+        </Row>
+      </Section>
+    </GridForm>
+  </forms.RenderForm>
+</form>
+```
 
 ## API
 
