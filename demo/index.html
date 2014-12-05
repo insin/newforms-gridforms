@@ -93,32 +93,35 @@ var ProductForm = forms.Form.extend({
 
 var App = React.createClass({
   render() {
-    return <form>
-      <forms.RenderForm form={ProductForm}>
-        <GridForm>
-          <Section name="Add to inventory">
-            <Row>
-              <Field name="productName" span="3"/>
-              <Field name="tags"/>
-            </Row>
-            <Row>
-              <Field name="vendor"/>
-              <Field name="productType"/>
-            </Row>
-            <Row>
-              <Field name="productDescription"/>
-            </Row>
-            <Row>
-              <Field name="sku"/>
-              <Field name="initialStockLevel"/>
-              <Field name="costPrice"/>
-              <Field name="wholesalePrice"/>
-              <Field name="retailPrice"/>
-            </Row>
-          </Section>
-        </GridForm>
-      </forms.RenderForm>
-    </form>
+    return <div>
+      <h1><a href="https://github.com/insin/newforms-gridforms">newforms-gridforms</a></h1>
+      <form>
+        <forms.RenderForm form={ProductForm}>
+          <GridForm>
+            <Section name="Add to inventory">
+              <Row>
+                <Field name="productName" span="3"/>
+                <Field name="tags"/>
+              </Row>
+              <Row>
+                <Field name="vendor"/>
+                <Field name="productType"/>
+              </Row>
+              <Row>
+                <Field name="productDescription"/>
+              </Row>
+              <Row>
+                <Field name="sku"/>
+                <Field name="initialStockLevel"/>
+                <Field name="costPrice"/>
+                <Field name="wholesalePrice"/>
+                <Field name="retailPrice"/>
+              </Row>
+            </Section>
+          </GridForm>
+        </forms.RenderForm>
+      </form>
+    </div>
   }
 })
 
