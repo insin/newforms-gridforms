@@ -85,10 +85,10 @@ var ProductForm = forms.Form.extend({
   productType: forms.ChoiceField({choices: PRODUCT_TYPE_CHOICES}),
   productDescription: forms.CharField({widget: forms.Textarea}),
   sku: forms.CharField(),
-  initialStockLevel: forms.IntegerField({min: 0}),
-  costPrice: forms.DecimalField({min: 0, decimalPlaces: 2}),
-  wholesalePrice: forms.DecimalField({min: 0, decimalPlaces: 2}),
-  retailPrice: forms.DecimalField({min: 0, decimalPlaces: 2})
+  initialStockLevel: forms.IntegerField({minValue: 0}),
+  costPrice: forms.DecimalField({minValue: 0, decimalPlaces: 2}),
+  wholesalePrice: forms.DecimalField({minValue: 0, decimalPlaces: 2}),
+  retailPrice: forms.DecimalField({minValue: 0, decimalPlaces: 2})
 })
 
 var App = React.createClass({
