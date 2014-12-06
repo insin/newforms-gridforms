@@ -1,7 +1,7 @@
 # newforms-gridforms
 
 [Grid Forms](http://kumailht.com/gridforms/) integration for
-[newforms](https://guthub.com/insin/newforms).
+[newforms](https://github.com/insin/newforms).
 
 ## Demos
 
