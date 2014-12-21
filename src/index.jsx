@@ -1,12 +1,11 @@
 'use strict';
 
-var React = require('react/addons')
-var cloneWithProps = React.addons.cloneWithProps
+var React = require('react')
 
 var GridForm = React.createClass({
   render() {
     return <div className="grid-form">
-      {React.Children.map(this.props.children, child => cloneWithProps(child, {form: this.props.form}))}
+      {this.props.children}
     </div>
   }
 })
@@ -18,7 +17,7 @@ var Section = React.createClass({
   render() {
     return <fieldset>
       <legend>{this.props.name}</legend>
-      {React.Children.map(this.props.children, child => cloneWithProps(child, {form: this.props.form}))}
+      {this.props.children}
     </fieldset>
   }
 })
@@ -28,12 +27,16 @@ var Row = React.createClass({
     var span = 0
     React.Children.forEach(this.props.children, c => span += Number(c.props.span))
     return <div data-row-span={span}>
-      {React.Children.map(this.props.children, child => cloneWithProps(child, {form: this.props.form}))}
+      {this.props.children}
     </div>
   }
 })
 
 var Field = React.createClass({
+  contextTypes: {
+    form: React.PropTypes.object.isRequired
+  },
+
   propTypes: {
     name: React.PropTypes.string.isRequired
   , span: React.PropTypes.string
@@ -44,7 +47,7 @@ var Field = React.createClass({
   },
 
   render() {
-    var bf = this.props.form.boundField(this.props.name)
+    var bf = this.context.form.boundField(this.props.name)
     return <div data-field-span={this.props.span}>
       {bf.labelTag()}
       {bf.render()}
