@@ -1,16 +1,12 @@
 {
   "name": "newforms-gridforms",
-  "version": "0.1.0",
   "description": "Grid Forms integration for newforms",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "standalone": "GridForms",
+  "homepage": "https://github.com/insin/newforms-gridforms",
   "author": "Jonny Buchanan <jonathan.buchanan@gmail.com>",
-  "main": "lib/index.js",
-  "keywords": [
-    "forms",
-    "layout",
-    "react",
-    "newforms",
-    "gridforms"
-  ],
+  "license": "MIT",
   "dependencies": {},
   "peerDependencies": {
     "newforms": ">=0.10.0",
@@ -33,6 +29,7 @@
     "vinyl-source-stream": "^1.0.0"
   },
   "scripts": {
+    "debug": "gulp --debug",
     "dist": "gulp bundle-js --production",
     "watch": "gulp"
   },
@@ -44,5 +41,11 @@
     "type": "git",
     "url": "http://github.com/insin/newforms-gridforms.git"
   },
-  "license": "MIT"
+  "keywords": [
+    "forms",
+    "layout",
+    "react",
+    "newforms",
+    "gridforms"
+  ]
 }

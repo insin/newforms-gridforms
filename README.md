@@ -5,12 +5,12 @@
 
 ## Demos
 
-* [Product Form](http://insin.github.io/newforms-gridforms/) - the from from the
+* [Product Form](http://insin.github.io/newforms-gridforms/) - the demo from the
   Grid Forms homepage rendered with newforms-gridforms.
 
 ## Install
 
-### Node.js (not available yet!)
+### Node.js
 
 newforms-gridforms can be used on the server, or bundled for the client using an
 npm-compatible packaging system such as [Browserify](http://browserify.org/) or
@@ -20,7 +20,7 @@ npm-compatible packaging system such as [Browserify](http://browserify.org/) or
 npm install newforms-gridforms
 ```
 
-### Browser bundle (not available yet!)
+### Browser bundle
 
 The browser bundle exposes a global `TBD` variable and expects to
 find global `React` ([React](http://facebook.github.io/react/)) and `forms`
@@ -31,11 +31,11 @@ You can find it in the [/dist directory](https://github.com/insin/newforms-gridf
 ## Usage
 
 ```javascript
-// Node only - a global NewformsGridForms variable is exported in the browser
-var NewformsGridForms = require('newforms-gridforms')
+// Node only - a global GridForms variable is exported in the browser
+var GridForms = require('newforms-gridforms')
 
-// Components are exported as properties of NewformsGridForms
-var {GridForm, Section, Row, Field} = NewformsGridForms
+// Components are exported as properties of GridForms
+var {GridForm, Section, Row, Field} = GridForms
 ```
 
 Nest `<Section>`, `<Row>` and `<Field>` components under a `<GridForm>` as
@@ -81,9 +81,5 @@ Product Form example:
   </forms.RenderForm>
 </form>
 ```
-
-## API
-
-TBD
 
 ## MIT Licensed
