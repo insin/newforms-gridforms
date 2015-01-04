@@ -6,4 +6,3 @@ test
 .jshintrc
 .travis.yml
 gulpfile.js
-spinner.gif
