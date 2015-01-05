@@ -22,7 +22,7 @@ npm install newforms-gridforms
 
 ### Browser bundle
 
-The browser bundle exposes a global `TBD` variable and expects to
+The browser bundle exposes a global `GridForms` variable and expects to
 find global `React` ([React](http://facebook.github.io/react/)) and `forms`
 ([newforms](https://github.com/insin/newforms)) variables to work with.
 
