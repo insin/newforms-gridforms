@@ -3,7 +3,7 @@
 [Grid Forms](http://kumailht.com/gridforms/) integration for
 [newforms](https://github.com/insin/newforms).
 
-## Demos
+## Demo
 
 * [Product Form](http://insin.github.io/newforms-gridforms/) - the demo from the
   Grid Forms homepage rendered with newforms-gridforms.
@@ -21,10 +21,6 @@ npm install newforms-gridforms
 ```
 
 ### Browser bundle
-
-**Note: the browser bundle expects to be able to use
-`React.addons.cloneWithProps()`, so you must use the react-with-addons React
-bundle in order to make use of it.**
 
 The browser bundle exposes a global `GridForms` variable and expects to
 find global `React` ([React](http://facebook.github.io/react/)) and `forms`

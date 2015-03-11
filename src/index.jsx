@@ -1,12 +1,11 @@
 'use strict';
 
-var React = require('react/addons')
-var cloneWithProps = React.addons.cloneWithProps
+var React = require('react')
 
 var GridForm = React.createClass({
   render() {
     return <div className="grid-form">
-      {React.Children.map(this.props.children, child => cloneWithProps(child, {form: this.props.form}))}
+      {React.Children.map(this.props.children, child => React.cloneElement(child, {form: this.props.form}))}
     </div>
   }
 })
@@ -18,7 +17,7 @@ var Section = React.createClass({
   render() {
     return <fieldset>
       <legend>{this.props.name}</legend>
-      {React.Children.map(this.props.children, child => cloneWithProps(child, {form: this.props.form}))}
+      {React.Children.map(this.props.children, child => React.cloneElement(child, {form: this.props.form}))}
     </fieldset>
   }
 })
@@ -28,7 +27,7 @@ var Row = React.createClass({
     var span = 0
     React.Children.forEach(this.props.children, c => span += Number(c.props.span))
     return <div data-row-span={span}>
-      {React.Children.map(this.props.children, child => cloneWithProps(child, {form: this.props.form}))}
+      {React.Children.map(this.props.children, child => React.cloneElement(child, {form: this.props.form}))}
     </div>
   }
 })
